@@ -1,3 +1,5 @@
+DefaultContentLanguage: ja
+
 module:
     hugoVersion:
         extended: true
@@ -11,24 +13,24 @@ params:
     favicon:
 
     footer:
-        since:
+        since: 2025
         customText:
 
     dateFormat:
-        published: Jan 02, 2006
-        lastUpdated: Jan 02, 2006 15:04 MST
+        published: 2006/01/02
+        lastUpdated: 2006/01/02 15:04 JST
 
     sidebar:
         compact: false
-        emoji:
+        emoji: 🗾
         subtitle:
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/job_it_dokata.png
 
     article:
-        headingAnchor: false
+        headingAnchor: true
         math: false
         toc: true
         readingTime: true
@@ -118,13 +120,18 @@ params:
             id:
 
     widgets:
-        homepage: []
-        page: []
+        homepage: 
+            - type: archives
+            - type: search
+            - type: categories
+            - type: tag-cloud
+        page:
+            - type: toc
 
     opengraph:
         twitter:
             # Your Twitter username
-            site:
+            site: 
 
             # Available values: summary, summary_large_image
             card: summary_large_image
@@ -147,3 +154,67 @@ params:
             enabled: true
         content:
             enabled: true
+
+menu:
+    main: []
+
+    social:
+        - identifier: x
+          name: X
+          weight: -100
+          url: https://x.com/KURO___INU
+          params:
+              icon: brand-x
+        - identifier: instagram
+          name: Instagram
+          weight: -90
+          url: https://www.instagram.com/inuse_kuroyanagi/
+          params:
+              icon: brand-instagram
+        - identifier: github
+          name: GitHub
+          weight: -80
+          url: https://github.com/kuro-inu
+          params:
+              icon: brand-github
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        extensions:
+            passthrough:
+                enable: true
+                delimiters:
+                    block:
+                        - - \[
+                          - \]
+                        - - $$
+                          - $$
+                    inline:
+                        - - \(
+                          - \)
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: false
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
