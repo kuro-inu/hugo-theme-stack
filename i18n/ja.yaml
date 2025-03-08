@@ -30,6 +30,10 @@ article:
     readingTime:
         other: "読了時間: {{ .Count }}分"
 
+note:
+    affiliate:
+        other: "アフィリエイトリンクが含まれる可能性があります。"
+
 notFound:
     title:
         other: 404 Not Found

@@ -45,6 +45,12 @@
                 </time>
             </div>
         {{ end }}
+        {{ if .Params.affiliates }}
+            <div>
+                {{ partial "helper/icon" "affiliate" }}
+                {{ T "note.affiliate" }}
+            </div>
+        {{ end }}
     </footer>
     {{ end }}
 
